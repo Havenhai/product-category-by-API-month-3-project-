@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="month 3 pro.css">
+    <style>
+      *{
+    margin: 0px;
+    padding: 0px;
+ 
+}
+h1{
+    text-align: center;
+    padding: 40px 0px;
+}
+.main{
+    width: 1320px;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+}
+.filterBox{
+    flex-basis: 23%;
+}
+.product{
+    flex-basis: 75%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.CategoryList{
+    margin-top: 20px;
+}
+.CategoryList label{
+display: block;
+padding: 5px 0px;
+}
+.productItems{
+    flex-basis: 31%;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px 2px #ccc;
+}
+.productItems img{
+    width: 100%;
+    height: 250px;
+}
+.productItems p{
+    padding: 10px;
+}
+.productItems h3{
+    padding: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Our Products</h1>
+    <div class="main">
+        <div class="filterBox">
+            <h2>Category</h2>
+            <div class="CategoryList">
+                <label for="">
+                    <input type="checkbox">Mens
+                </label>
+                
+          </div>
+        </div>
+        <div class="product">
+            <div class="productItems">
+                <img src="https://pictures-ghana.jijistatic.com/37747835_ODAwLTgwMC02YWIzODIzNDU5.webp" alt="">
+                <p>GH₵ 140, Negotiable</p>
+                <h3>
+                    Condition:brand new <br>
+                    Type:bag <br>
+                    Colour:purple <br>
+                    Gender:girls <br>
+                    Bag Subtype:backpack
+                    Material:other
+                    </h3>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+      
+    <script>
+let productDiv=document.querySelector(".product");
+var CategoryListDiv=document.querySelector(".CategoryList");
+let allCat=[];
+let displayProduct=async (allcheckCat=[])=>{
+  CategoryListDiv.innerHTML='';
+    productDiv.innerHTML='';
+    let product=await fetch('https://fakestoreapi.com/products')
+    let finalproduct=await product.json();
+    finalproduct.forEach(element => {
+
+      if(!allCat.includes(element.category)){
+
+      CategoryListDiv.innerHTML+=` <label>
+                    <input type="checkbox" value="${element.category}">
+                </label>` ;
+
+
+                allCat.push(element.category)
+                  
+} 
+if(allcheckCat,length==0){
+  console.log("Hello")
+}
+        productDiv.innerHTML+=` <div class="productItems">
+            <img src="${element.image}">
+            <h4>${element.category}</h4>
+            <p>Price Rs. ${element.price}| ${element.rate} 
+                </p>
+                <h3>${element.title} </h3>
+        </div>`
+    });
+}
+displayProduct();
+    </script>
+  </body>
+</html>
