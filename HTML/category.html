@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link
+    rel="icon"
+    href="../images/130267-d-letter-download-hq.png"
+    type="image/x-icon"
+  />
+    <style>
+      * {
+        margin-left: 10px;
+        margin-right: 13px;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        font-family: "Jost", sans-serif;
+        list-style: none;
+        text-decoration: none;
+      }
+      .favicon {
+        width: 100px;
+      }
+      nav {
+        display: flex;
+        padding: 2% 6%;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-links {
+        flex: 1;
+        text-align: right;
+      }
+
+      /* nav links styling */
+      .nav-links ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+      }
+      .nav-links ul li a {
+        color: black;
+        text-decoration: none;
+        font-size: 13px;
+      }
+
+      /* hover effect for nav links*/
+      .nav-links ul li::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #f44336;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+      }
+      .nav-links ul li:hover::after {
+        width: 100%;
+      }
+
+      .center-text h2 {
+        color: black;
+        font-size: 30px;
+        text-transform: capitalize;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .center-text span {
+        color: springgreen;
+      }
+      .products {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-content: space-between;
+      }
+      .row img {
+        padding-top: 20px;
+        width: 300px;
+        /* height: 500px; */
+        transition: all 0.4s;
+        padding-left: 50px;
+        height: 250px;
+      }
+      .row {
+        padding-top: 60px;
+        position: relative;
+        transition: all 0.4s;
+        box-shadow: 4px 4px 4px 4px rgba(0,0,0, 0.4)
+      }
+      .row img:hover {
+        transform: scale(0.9);
+      }
+      .product-text h5 {
+        position: absolute;
+        top: 13px;
+        left: 13px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        background-color: #27b737;
+        padding: 3px 10px;
+        border-radius: 2px;
+      }
+      .heart-icon {
+        position: absolute;
+        right: 0;
+        font-size: 20px;
+      }
+      .heart-icon:hover {
+        color: red;
+      }
+      .ratting i {
+        color: rgb(240, 214, 66);
+      }
+      .price h4 {
+        color: rgb(12, 12, 12);
+        font-size: 20px;
+        text-transform: capitalize;
+        font-weight: 400 bold;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .price p {
+        color: black;
+        font-size: 14px;
+        font-weight: 600;
+      }
+    .row try{
+            width: 100px;
+            height: 50px;
+        }
+    #category {
+        display: flex;
+        /* justify-content: space-around; */
+        gap: 50px;
+
+    }
+    .category {
+        cursor: pointer;
+        padding-bottom: 20px;
+        
+    }
+  @media screen and (max-width: 768px) {
+  .products {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+  }
+  div > div > img{
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+.hero-button {
+  display: inline-block;
+  
+  text-decoration: none;
+  color: white;
+  border: 1px solid #e7685f;;
+  padding: 8px 16px;
+  font-size: 13px;
+  background: #e7685f;
+  position: relative;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-left: 32px;
+}
+.hero-button:hover {
+  border: 1px solid blanchedalmond;
+  background: blanchedalmond;
+  color: #e7685f;
+  transition: 1s;
+}
+.pro p{
+  font-family: 'Times New Roman', Times, serif;
+}
+    </style>
+  </head>
+  <body>
+    
+    <nav>
+      <a href="home.html"
+            ><img
+              class="favicon"
+              src="../images/130267-d-letter-download-hq.png"
+              alt=""
+          /></a>
+      <div class="nav-links">
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="aboutus.html" target="_blank">ABOUT</a></li>
+            <li><a href="product.html" target="blank">PRODUCT</a></li>
+            <li><a href="category.html" target="blank">CATEGORIES</a></li>
+            <li><a href="#service">SERVICES</a></li>
+            <li><a href="!#">REVIEWS</a></li>
+          </ul>
+      </div>
+    </nav>
+  </header>
+
+    <section class="pro" id="pros">
+      <div class="center-text">
+        <h2>Our <span>products</span></h2>
+      </div>
+      <div id="category"></div>
+      <div class="products" id="categories">
+      </div>
+      <br>
+   
+    </section>
+
+    <script src="../script/script_two.js">
+
+    </script>
+    
+  </body>
+</html>
